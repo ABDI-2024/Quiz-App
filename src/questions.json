@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "question": "What is the purpose of the useState hook in React?",
+    "options": [
+      { "label": "A", "text": "To manage state in functional components", "isCorrect": true },
+      { "label": "B", "text": "To apply CSS styling", "isCorrect": false },
+      { "label": "C", "text": "To fetch data from an API", "isCorrect": false },
+      { "label": "D", "text": "To create class-based components", "isCorrect": false }
+    ]
+  },
+  {
+    "id": 2,
+    "question": "useEffect is used to perform side effects in React.",
+    "options": [
+      { "label": "A", "text": "True", "isCorrect": true },
+      { "label": "B", "text": "False", "isCorrect": false },
+      { "label": "C", "text": "Only for styling", "isCorrect": false },
+      { "label": "D", "text": "Only for state updates", "isCorrect": false }
+    ]
+  },
+  {
+    "id": 3,
+    "question": "Which method is used to create components in React?",
+    "options": [
+      { "label": "A", "text": "function MyComponent()", "isCorrect": true },
+      { "label": "B", "text": "createComponent()", "isCorrect": false },
+      { "label": "C", "text": "renderComponent()", "isCorrect": false },
+      { "label": "D", "text": "new Component()", "isCorrect": false }
+    ]
+  }
+]
