@@ -1,28 +1,25 @@
-import { createContext, useState } from "react";
+import { createContext, useEffect, useRef, useState } from "react";
 import "./styles.css";
-
-import Start from "./components/Start";
-import QuestionCards from "./components/QuestionCards";
-import Result from "./components/Results";
-import questions from "./questions.json";
+import StartScreen from "./StartScreen";
+import QuizScreen from "./QuizScreen";
+import qustions from "./questions.json";
 
 export const QuizContext = createContext();
 
 export default function App() {
-  const [startGame, setStartGame] = useState(true);
-  const [startQuestions, setStartQuestions] = useState(false);
+  const [score, setScore] = useState({ correct: 0, wrong: 0 });
 
-  const [questionList, setQuestionList] = useState(() => {
-    return questions;
-  });
-  const [currentQuestion, setCurrentQuestion] = useState(0);
+  const [startQuiz, setStartQuiz] = useState(false);
+  const questionList = useRef(qustions);
 
   return (
-    <QuizContext value={{ questionList, currentQuestion, setCurrentQuestion }}>
+    <QuizContext value={{ score, setScore }}>
       <div className="page-section">
-        {startGame && <Start setStartGame={setStartGame} setStartQuestions={setStartQuestions} />}
-
-        {startQuestions && <QuestionCards />}
+        {startQuiz ? (
+          <QuizScreen questionList={questionList.current} setStartQuiz={setStartQuiz} />
+        ) : (
+          <StartScreen questionList={questionList.current} setStartQuiz={setStartQuiz} />
+        )}
       </div>
     </QuizContext>
   );
